@@ -2108,6 +2108,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2129,6 +2186,19 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Blog',
         link: '/blog',
         icon: 'post'
+      }],
+      signup_item: [{
+        title: 'Instructor',
+        link: '/signup/instructor',
+        icon: 'teach'
+      }, {
+        title: 'Student',
+        link: '/signup/student',
+        icon: 'account'
+      }, {
+        title: 'Parent',
+        link: '/signup/parent',
+        icon: 'account-child'
       }]
     };
   } // mounted: function() {
@@ -21234,7 +21304,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticStyle: { height: "1500px" } },
     [
       _c(
         "v-app",
@@ -21267,7 +21336,7 @@ var render = function() {
               _vm._l(_vm.items, function(item) {
                 return _c(
                   "v-toolbar-items",
-                  { key: item.title, staticClass: "hidden-xs-only" },
+                  { key: item.title, staticClass: "hidden-sm-and-down" },
                   [
                     _c(
                       "v-btn",
@@ -21298,7 +21367,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "span",
-                { staticClass: "hidden-sm-and-up" },
+                { staticClass: "hidden-md-and-up" },
                 [
                   _c(
                     "v-btn",
@@ -21320,22 +21389,87 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-btn",
-                { staticClass: "hidden-xs-only", attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("mdi-magnify")])],
+                { staticClass: "hidden-sm-and-down", attrs: { text: "" } },
+                [
+                  _c("v-icon", [_vm._v("mdi-login")]),
+                  _vm._v("\n        Login\n      ")
+                ],
                 1
               ),
               _vm._v(" "),
               _c(
-                "v-btn",
-                { staticClass: "hidden-xs-only", attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("mdi-heart")])],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                { staticClass: "hidden-xs-only", attrs: { icon: "" } },
-                [_c("v-icon", [_vm._v("mdi-dots-vertical")])],
+                "v-menu",
+                {
+                  attrs: { "open-on-hover": "", "offset-y": "", bottom: "" },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var on = ref.on
+                        var attrs = ref.attrs
+                        return [
+                          _c(
+                            "v-btn",
+                            _vm._g(
+                              _vm._b(
+                                {
+                                  staticClass: "hidden-sm-and-down",
+                                  attrs: { text: "" }
+                                },
+                                "v-btn",
+                                attrs,
+                                false
+                              ),
+                              on
+                            ),
+                            [
+                              _c("v-icon", [_vm._v("mdi-account-plus")]),
+                              _vm._v("\n            Sign Up\n          ")
+                            ],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list",
+                    _vm._l(_vm.signup_item, function(item, index) {
+                      return _c(
+                        "v-list-item",
+                        { key: index, attrs: { link: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [
+                              _c("v-icon", { attrs: { small: "" } }, [
+                                _vm._v(
+                                  "\n                mdi-" +
+                                    _vm._s(item.icon) +
+                                    "\n              "
+                                )
+                              ])
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("v-list-item-title", [
+                            _vm._v(
+                              "\n              " +
+                                _vm._s(item.title) +
+                                "\n            "
+                            )
+                          ])
+                        ],
+                        1
+                      )
+                    }),
+                    1
+                  )
+                ],
                 1
               )
             ],
@@ -21345,7 +21479,7 @@ var render = function() {
           _c(
             "v-navigation-drawer",
             {
-              attrs: { absolute: "", temporary: "", bottom: "" },
+              attrs: { fixed: "", temporary: "", left: "" },
               model: {
                 value: _vm.drawer,
                 callback: function($$v) {
@@ -21357,30 +21491,102 @@ var render = function() {
             [
               _c(
                 "v-list",
-                _vm._l(_vm.items, function(item) {
-                  return _c(
+                [
+                  _vm._l(_vm.items, function(item) {
+                    return _c(
+                      "v-list-item",
+                      { key: item.title, attrs: { to: item.link, link: "" } },
+                      [
+                        _c(
+                          "v-list-item-icon",
+                          [
+                            _c("v-icon", { attrs: { small: "" } }, [
+                              _vm._v(
+                                "\n              mdi-" +
+                                  _vm._s(item.icon) +
+                                  "\n            "
+                              )
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(
+                          "\n          " + _vm._s(item.title) + "\n        "
+                        )
+                      ],
+                      1
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
                     "v-list-item",
-                    { key: item.title, attrs: { to: item.link, link: "" } },
+                    { attrs: { link: "" } },
                     [
                       _c(
                         "v-list-item-icon",
                         [
                           _c("v-icon", { attrs: { small: "" } }, [
-                            _vm._v(
-                              "\n              mdi-" +
-                                _vm._s(item.icon) +
-                                "\n            "
-                            )
+                            _vm._v("\n              mdi-login\n            ")
                           ])
                         ],
                         1
                       ),
-                      _vm._v("\n          " + _vm._s(item.title) + "\n        ")
+                      _vm._v("\n          Login\n        ")
                     ],
                     1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-group",
+                    {
+                      attrs: {
+                        value: true,
+                        "prepend-icon": "mdi-account-plus"
+                      },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function() {
+                            return [
+                              _c("v-list-item-title", [_vm._v("Sign Up")])
+                            ]
+                          },
+                          proxy: true
+                        }
+                      ])
+                    },
+                    [
+                      _vm._v(" "),
+                      _vm._l(_vm.signup_item, function(item, i) {
+                        return _c(
+                          "v-list-item",
+                          { key: i, attrs: { to: item.link, link: "" } },
+                          [
+                            _c(
+                              "v-list-item-icon",
+                              { staticClass: "ml-10" },
+                              [
+                                _c("v-icon", [
+                                  _vm._v("mdi-" + _vm._s(item.icon))
+                                ])
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("v-list-item-title", [
+                              _vm._v(_vm._s(item.title))
+                            ])
+                          ],
+                          1
+                        )
+                      })
+                    ],
+                    2
                   )
-                }),
-                1
+                ],
+                2
               )
             ],
             1
@@ -21394,17 +21600,21 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "v-container",
-                { staticClass: "mt-16" },
+                { staticClass: "mt-16", attrs: { "fill-height": "" } },
                 [
                   _c(
                     "v-row",
+                    {
+                      staticClass: "text-sm-center",
+                      attrs: { align: "center", justify: "center" }
+                    },
                     [
                       _c(
                         "v-col",
                         {
-                          staticClass: "align-self-center white--text",
+                          staticClass: "white--text",
                           staticStyle: { "z-index": "2" },
-                          attrs: { cols: "6", sm: "12", md: "6" }
+                          attrs: { cols: "12", xs: "12", md: "6" }
                         },
                         [
                           _c("h1", { staticClass: "display-3" }, [
@@ -21417,7 +21627,7 @@ var render = function() {
                             [_vm._v("For a better education ")]
                           ),
                           _vm._v(" "),
-                          _c("p", { staticClass: "white--text mt-5" }, [
+                          _c("p", { staticClass: "white--text mt-3" }, [
                             _vm._v(
                               "A best and cheapest way of getting know learning to make a better tomorrow."
                             )
@@ -21429,16 +21639,9 @@ var render = function() {
                         "v-col",
                         {
                           staticStyle: { "z-index": "2" },
-                          attrs: { cols: "6", sm: "12", md: "6" }
+                          attrs: { cols: "12", sm: "12", md: "6" }
                         },
-                        [
-                          _c("img", {
-                            staticStyle: { height: "500px", width: "600px" },
-                            attrs: {
-                              src: __webpack_require__(/*! ../../../public/img/svg/study.svg */ "./public/img/svg/study.svg")
-                            }
-                          })
-                        ]
+                        [_c("div", { staticClass: "home-svg" })]
                       )
                     ],
                     1
@@ -80574,17 +80777,6 @@ module.exports = function(module) {
 	return module;
 };
 
-
-/***/ }),
-
-/***/ "./public/img/svg/study.svg":
-/*!**********************************!*\
-  !*** ./public/img/svg/study.svg ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/study.svg?086e1409e9e5cf67377e163a7ae10f6c";
 
 /***/ }),
 

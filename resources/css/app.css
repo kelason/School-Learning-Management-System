@@ -34,3 +34,23 @@ body {
 .active {
     border-bottom: solid 3px #fff!important;
 }
+
+.home-svg {
+    background-image: url("../../public/img/svg/study.svg");
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 500px; 
+    width: 100%;
+}
+
+@media screen and (min-width: 500px) and (max-width: 960px) {
+    .home-svg {
+        height: 300px; 
+        width: 100%;
+        background-position: center top;
+    }
+    .header__bg {
+        height: 700px;
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 1500px;">
+  <div>
     <v-app id="inspire">
       <v-progress-linear
         indeterminate
@@ -16,7 +16,7 @@
         <v-toolbar-title class="font-weight-medium display-1">School</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items 
-          class="hidden-xs-only"
+          class="hidden-sm-and-down"
           v-for="item in items"
           :key="item.title"
         >
@@ -26,28 +26,56 @@
           </v-btn>
         </v-toolbar-items>
         <v-spacer></v-spacer>
-        <span class="hidden-sm-and-up">
+        <span class="hidden-md-and-up">
           <v-btn icon @click.stop="drawer = !drawer">
             <v-icon>mdi-menu</v-icon>
           </v-btn>
         </span>
-        <v-btn icon class="hidden-xs-only">
-          <v-icon>mdi-magnify</v-icon>
+        <v-btn text class="hidden-sm-and-down">
+          <v-icon>mdi-login</v-icon>
+          Login
         </v-btn>
-  
-        <v-btn icon class="hidden-xs-only">
-          <v-icon>mdi-heart</v-icon>
-        </v-btn>
-  
-        <v-btn icon class="hidden-xs-only">
-          <v-icon>mdi-dots-vertical</v-icon>
-        </v-btn>
+
+        <v-menu
+          open-on-hover
+          offset-y
+          bottom
+        >
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              v-bind="attrs"
+              v-on="on"
+              text 
+              class="hidden-sm-and-down"
+            >
+              <v-icon>mdi-account-plus</v-icon>
+              Sign Up
+            </v-btn>
+          </template>
+    
+          <v-list>
+            <v-list-item
+              v-for="(item, index) in signup_item"
+              :key="index"
+              link
+            >
+              <v-list-item-icon>
+                <v-icon small>
+                  mdi-{{ item.icon }}
+                </v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>
+                {{ item.title }}
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-app-bar>
       <v-navigation-drawer
         v-model="drawer"
-        absolute
+        fixed
         temporary
-        bottom
+        left
       >
         <v-list>
           <v-list-item
@@ -63,6 +91,37 @@
             </v-list-item-icon>
             {{ item.title }}
           </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item
+            link
+          >
+            <v-list-item-icon>
+              <v-icon small>
+                mdi-login
+              </v-icon>
+            </v-list-item-icon>
+            Login
+          </v-list-item>
+          <v-list-group
+            :value="true"
+            prepend-icon="mdi-account-plus"
+          >
+            <template v-slot:activator>
+              <v-list-item-title>Sign Up</v-list-item-title>
+            </template>
+  
+            <v-list-item
+              v-for="(item, i) in signup_item"
+              :to="item.link"
+              :key="i"
+              link
+            >
+              <v-list-item-icon class="ml-10">
+                <v-icon>mdi-{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item>
+          </v-list-group>
         </v-list>
       </v-navigation-drawer>
       <v-sheet
@@ -71,29 +130,27 @@
         <div class="violet-gradient"></div>
         <v-container 
           class="mt-16" 
+          fill-height
         >
-          <v-row>
+          <v-row class="text-sm-center" align="center" justify="center">
             <v-col
-              cols="6"
-              sm="12"
+              cols="12"
+              xs="12"
               md="6"
-              class="align-self-center white--text"
+              class="white--text"
               style="z-index:2"
             >
               <h1 class="display-3">E-Learning</h1>
               <h1 class="grey--text text--lighten-1">For a better education </h1>
-              <p class="white--text mt-5">A best and cheapest way of getting know learning to make a better tomorrow.</p>
+              <p class="white--text mt-3">A best and cheapest way of getting know learning to make a better tomorrow.</p>
             </v-col>
             <v-col
-              cols="6"
+              cols="12"
               sm="12"
               md="6"
               style="z-index:2"
             >
-              <img 
-                src="../../../public/img/svg/study.svg"
-                style="height: 500px; width: 600px;"
-              >
+              <div class="home-svg"></div>
             </v-col>
           </v-row>
         </v-container>
@@ -112,7 +169,12 @@ export default {
         { title: 'About', link:'/about', icon: 'information-variant' },
         { title: 'Contact Us', link:'/contact-us', icon: 'contacts' },
         { title: 'Blog', link:'/blog', icon: 'post' },
-      ]
+      ],
+      signup_item: [
+        { title: 'Instructor', link:'/signup/instructor', icon: 'teach' },
+        { title: 'Student', link:'/signup/student', icon: 'account' },
+        { title: 'Parent', link:'/signup/parent', icon: 'account-child' },
+      ],
     }
   },
   // mounted: function() {
