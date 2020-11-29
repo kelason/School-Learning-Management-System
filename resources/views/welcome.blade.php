@@ -7,12 +7,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/css/app.css">
 
-        <title>FullStack Blog</title>
+        <title>E-Learning</title>
 
     </head>
     <body>
-        <div id="app">
-        </div>
+        <div id="app"></div>
     </body>
     <script src="{{mix('/js/app.js')}}"></script>
 </html>
