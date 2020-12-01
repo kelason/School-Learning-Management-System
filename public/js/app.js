@@ -2131,6 +2131,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2142,9 +2144,9 @@ __webpack_require__.r(__webpack_exports__);
       },
       emailRules: [],
       passwordRules: {
-        required: '',
-        min: '',
-        emailMatch: ''
+        required: true,
+        min: true,
+        emailMatch: true
       },
       loader: null,
       loading: false
@@ -21681,13 +21683,16 @@ var render = function() {
           _c(
             "v-col",
             {
-              staticClass: "primary lighten-1 hidden-xs-only",
+              staticClass: "hidden-xs-only",
               attrs: { cols: "12", sm: "6", md: "7" }
             },
             [
               _c(
                 "v-container",
-                { attrs: { "fill-height": "", fluid: "" } },
+                {
+                  staticClass: "svg__bg",
+                  attrs: { "fill-height": "", fluid: "" }
+                },
                 [
                   _c(
                     "v-row",
@@ -21699,7 +21704,22 @@ var render = function() {
                         "no-gutters": ""
                       }
                     },
-                    [_c("v-col")],
+                    [
+                      _c("v-col", [
+                        _c("h1", { staticClass: "white--text display-3" }, [
+                          _vm._v("Welcome to E-learning")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "grey--text text--lighten-3 title mt-3 font-weight-black"
+                          },
+                          [_vm._v("Sign in to continue access.")]
+                        )
+                      ])
+                    ],
                     1
                   )
                 ],

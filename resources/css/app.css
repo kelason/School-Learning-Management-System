@@ -17,18 +17,12 @@ body {
     border-radius: 0 0 50%/100px 100px; */
 }
 
-.header__bg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: -1;
+.svg__bg {
+    background-image: url("../../public/img/svg/Large-Triangles.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 100%;
-    height: 600px;
-    background-image: linear-gradient(#304a6b, #80d0c7);
-    transform: skewY(-2deg);
-    transform-origin: top left;
+    height: 100vh;
 }
 
 .active {

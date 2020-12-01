@@ -7,11 +7,12 @@
                 cols="12"
                 sm="6"
                 md="7"
-                class="primary lighten-1 hidden-xs-only"
+                class="hidden-xs-only"
             >
                 <v-container
                     fill-height
                     fluid
+                    class="svg__bg"
                 >
                     <v-row 
                         class="text-sm-center" 
@@ -20,7 +21,8 @@
                         no-gutters
                     >
                         <v-col>
-                            
+                            <h1 class="white--text display-3">Welcome to E-learning</h1>
+                            <p class="grey--text text--lighten-3 title mt-3 font-weight-black">Sign in to continue access.</p>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -99,9 +101,9 @@ export default {
             },
             emailRules: [],
             passwordRules: {
-                required: '',
-                min: '',
-                emailMatch: '',
+                required: true,
+                min: true,
+                emailMatch: true,
             },
             loader: null,
             loading: false,
