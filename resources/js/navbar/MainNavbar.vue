@@ -8,7 +8,7 @@
         style="z-index:6"
       ></v-progress-linear>
       <v-app-bar
-        color="#f64c72"
+        class="deep-purple"
         elevate-on-scroll 
         fixed 
         dark

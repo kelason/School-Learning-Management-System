@@ -5,14 +5,15 @@
         >
             <v-col
                 cols="12"
-                sm="6"
-                md="7"
+                sm="12"
+                md="6"
+                lg="7"
                 class="hidden-xs-only"
             >
                 <v-container
                     fill-height
                     fluid
-                    class="svg__bg"
+                    class="svg__bg blue"
                 >
                     <v-row 
                         class="text-sm-center" 
@@ -21,8 +22,9 @@
                         no-gutters
                     >
                         <v-col>
-                            <h1 class="white--text display-3">Welcome to E-learning</h1>
-                            <p class="grey--text text--lighten-3 title mt-3 font-weight-black">Sign in to continue access.</p>
+                            <h1 class="white--text display-3 font-weight-black">Welcome to E-learning</h1>
+                            <p class="grey--text text--lighten-4 headline mt-3 font-weight-black">Sign in to continue access.</p>
+                            <div class="login__bg"></div>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -30,8 +32,9 @@
             <v-col
                 cols="12"
                 xs="12"
-                sm="6"
-                md="5"
+                sm="12"
+                md="6"
+                lg="5"
             >
                 <v-container
                     fill-height
@@ -71,7 +74,7 @@
                                 ></v-text-field>
                                 <v-btn
                                     block
-                                    color="primary"
+                                    class="purple white--text"
                                     x-large
                                     :loading="loading"
                                     :disabled="!valid"

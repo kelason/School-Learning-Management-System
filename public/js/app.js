@@ -2133,6 +2133,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -21684,13 +21687,13 @@ var render = function() {
             "v-col",
             {
               staticClass: "hidden-xs-only",
-              attrs: { cols: "12", sm: "6", md: "7" }
+              attrs: { cols: "12", sm: "12", md: "6", lg: "7" }
             },
             [
               _c(
                 "v-container",
                 {
-                  staticClass: "svg__bg",
+                  staticClass: "svg__bg blue",
                   attrs: { "fill-height": "", fluid: "" }
                 },
                 [
@@ -21706,18 +21709,25 @@ var render = function() {
                     },
                     [
                       _c("v-col", [
-                        _c("h1", { staticClass: "white--text display-3" }, [
-                          _vm._v("Welcome to E-learning")
-                        ]),
+                        _c(
+                          "h1",
+                          {
+                            staticClass:
+                              "white--text display-3 font-weight-black"
+                          },
+                          [_vm._v("Welcome to E-learning")]
+                        ),
                         _vm._v(" "),
                         _c(
                           "p",
                           {
                             staticClass:
-                              "grey--text text--lighten-3 title mt-3 font-weight-black"
+                              "grey--text text--lighten-4 headline mt-3 font-weight-black"
                           },
                           [_vm._v("Sign in to continue access.")]
-                        )
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "login__bg" })
                       ])
                     ],
                     1
@@ -21731,7 +21741,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-col",
-            { attrs: { cols: "12", xs: "12", sm: "6", md: "5" } },
+            { attrs: { cols: "12", xs: "12", sm: "12", md: "6", lg: "5" } },
             [
               _c(
                 "v-container",
@@ -21818,9 +21828,9 @@ var render = function() {
                               _c(
                                 "v-btn",
                                 {
+                                  staticClass: "purple white--text",
                                   attrs: {
                                     block: "",
-                                    color: "primary",
                                     "x-large": "",
                                     loading: _vm.loading,
                                     disabled: !_vm.valid
@@ -22173,12 +22183,8 @@ var render = function() {
           _c(
             "v-app-bar",
             {
-              attrs: {
-                color: "#f64c72",
-                "elevate-on-scroll": "",
-                fixed: "",
-                dark: ""
-              }
+              staticClass: "deep-purple",
+              attrs: { "elevate-on-scroll": "", fixed: "", dark: "" }
             },
             [
               _c(

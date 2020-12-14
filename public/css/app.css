@@ -11,7 +11,7 @@ body {
     z-index: 1;
     height: 700px;
     background: rgb(0,105,173);
-    background: linear-gradient(#00d4ff, #304a6b);
+    background: linear-gradient(#667eea, #764ba2);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 66% 100%, 28% 93%, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 90%, 66% 100%, 28% 93%, 0 100%);
     /* border-color: #000 transparent transparent transparent;
@@ -19,11 +19,20 @@ body {
 }
 
 .svg__bg {
-    background-image: url(/images/Large-Triangles.svg?780d71a87f58cf235b023f7781d4514b);
+    background-image: url(/images/Large-Triangles.svg?12df0aa7eca59b0aefcdb8399f642774);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     width: 100%;
     height: 100vh;
+}
+
+.login__bg {
+    background-image: url(/images/login.svg?303e4a676b033a04f22e2725f3624a66);
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 300px; 
+    width: 100%;
 }
 
 .active {
