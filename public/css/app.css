@@ -11,7 +11,7 @@ body {
     z-index: 1;
     height: 700px;
     background: rgb(0,105,173);
-    background: linear-gradient(#667eea, #764ba2);
+    background: linear-gradient(#abb8f1, #764ba2);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 66% 100%, 28% 93%, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 90%, 66% 100%, 28% 93%, 0 100%);
     /* border-color: #000 transparent transparent transparent;
@@ -35,6 +35,33 @@ body {
     width: 100%;
 }
 
+.instructor__bg {
+    background-image: url(/images/instructor.svg?87ff362e963dc52c97929e148c87ed09);
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 300px; 
+    width: 100%;
+}
+
+.student__bg {
+    background-image: url(/images/learning.svg?e5e924b63fd6befcdb17a030982f3ea5);
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 300px; 
+    width: 100%;
+}
+
+.parent__bg {
+    background-image: url(/images/parent.svg?22baa366b661f4f12bd15828e2a37478);
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: center center;
+    height: 300px; 
+    width: 100%;
+}
+
 .active {
     border-bottom: solid 3px #fff!important;
 }
@@ -47,6 +74,23 @@ body {
     height: 500px; 
     width: 100%;
 }
+
+.line-between {
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    color:grey;
+  }
+  
+  .line-between:after,
+  .line-between:before {
+      content: "";
+      display: block;
+      background: grey;
+      width: 100%;
+      height:1px;
+      margin: 0 10px;
+  }
 
 @media screen and (min-width: 500px) and (max-width: 960px) {
     .home-svg {

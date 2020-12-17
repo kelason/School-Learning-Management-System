@@ -1,8 +1,15 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+// Main App Pages
 import Home from './components/pages/Home';
+// Admin pages
 import Dashboard from './admin/pages/Dashboard';
 import Login from './admin/Login';
+import Register from './admin/Register';
+// Register Pages
+import Instructor from './admin/pages/register/Instructor';
+import Student from './admin/pages/register/Student';
+import Parent from './admin/pages/register/Parent';
 
 Vue.use(Router);
 
@@ -22,6 +29,24 @@ const routes = [
         path: '/login', 
         name: 'Login', 
         component: Login
+    },
+    {
+        path: '/user/:id', 
+        component: Register,
+        children: [
+            {
+                path: 'instructor',
+                component: Instructor
+            },
+            {
+                path: 'student',
+                component: Student
+            },
+            {
+                path: 'parent',
+                component: Parent
+            }
+        ]
     }
 ];
 
