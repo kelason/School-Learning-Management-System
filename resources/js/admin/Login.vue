@@ -13,7 +13,7 @@
                 <v-container
                     fill-height
                     fluid
-                    class="svg__bg blue"
+                    class="svg__bg"
                 >
                     <v-row 
                         class="text-sm-center" 
