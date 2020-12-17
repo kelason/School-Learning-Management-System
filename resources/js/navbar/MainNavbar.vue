@@ -1,12 +1,12 @@
 <template>
   <div>
     <v-app id="inspire">
-      <v-progress-linear
+      <!-- <v-progress-linear
         indeterminate
         fixed
         color="white"
         style="z-index:6"
-      ></v-progress-linear>
+      ></v-progress-linear> -->
       <v-app-bar
         class="deep-purple"
         elevate-on-scroll 
@@ -142,9 +142,9 @@ export default {
         { title: 'Blog', link:'/blog', icon: 'post' },
       ],
       signup_item: [
-        { title: 'Instructor', link:'/signup/instructor', icon: 'teach' },
-        { title: 'Student', link:'/signup/student', icon: 'account' },
-        { title: 'Parent', link:'/signup/parent', icon: 'account-child' },
+        { title: 'Instructor', link:'/user/register/instructor', icon: 'teach' },
+        { title: 'Student', link:'/user/register/student', icon: 'account' },
+        { title: 'Parent', link:'/user/register/parent', icon: 'account-child' },
       ],
     }
   },
